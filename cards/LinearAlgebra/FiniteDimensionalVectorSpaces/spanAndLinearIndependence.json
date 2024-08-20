@@ -1,0 +1,188 @@
+{
+    "title" : "Span and Linear Independence",
+    "cards" : [
+        {
+            "title" : "Definition - Linear Combination",
+            "frontText" : "State the definition of a linear combination of a list of vectors \\(v_1, ..., v_m \\in V\\).",
+            "frontImg" : "",
+            "backText" : "A linear combination of vectors \\(v_1, ..., v_m \\in V\\) is any vector of the form \\(\\lambda_1v_1 + ... + \\lambda_mv_m\\) with \\(\\lambda_1, ..., \\lambda_m \\in F\\).",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Definition - Span",
+            "frontText" : "State the definition of the span of a list of vectors \\(v_1, ..., v_m \\in V\\).",
+            "frontImg" : "",
+            "backText" : "The span of \\(v_1, ..., v_m \\in V\\) is the set of all linear combinations of \\(v_1, ..., v_m\\). I.e., $$span(v_1, ..., v_m) = \\{\\lambda_1v_1 + ... + \\lambda_mv_m : \\lambda_1, ..., \\lambda_m \\in F\\}$$. The span of the empty list \\(()\\) is defined to be \\(\\{0\\}\\).",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - The Span of a List of Vectors is the Smallest Containing Subspace",
+            "frontText" : "Prove that the span of vectors \\(v_1, ..., v_m \\in V\\) is the smallest subspace of \\(V\\) containing \\(v_1, ..., v_m\\).",
+            "frontImg" : "",
+            "backText" : "First, we prove that the span of \\(v_1, ..., v_m\\) defines a subspace. \\(span(v_1, ..., v_m)\\) contains the additive identity: \\(0v_1 + ... + 0v_m = 0\\), which is the additive identity. \\(span(v_1, ..., v_m)\\) is closed under addition: take arbitrary \\(x = x_1v_1 + ... + x_mv_m\\) and \\(y = y_1v_1 + ... + y_mv_m\\), both in \\(span(v_1, ..., v_m)\\). $$x + y = x_1v_1 + ... + x_mv_m + y_1v_1 + ... + y_mv_m$$. By commutativity and distributivity, this can be expressed as $$(x_1 + y_1)v_1 + ... + (x_m + y_m)v_m$$. By the closure of \\(F\\) under addition, each \\(x_k + y_k \\in F\\). Therefore, \\(x + y \\in span(v_1, ..., v_m)\\). Closure of \\(span(v_1, ..., v_m)\\) under scalar multiplication: take arbitrary \\(x = \\lambda_1v_1 + ... + \\lambda_mv_m \\in span(v_1, ..., v_m)\\). Take arbitrary \\(\\mu \\in F\\). Then $$\\mu x = \\mu(\\lambda_1v_1 + ... + \\lambda_mv_m) = \\mu \\lambda_1v_1 + ... + \\mu \\lambda_mv_m$$ by distributivity. Since \\(F\\) is closed under scalar multiplication, each $\\mu \\lambda_k \\in F$, and this \\(\\mu x \\in span(v_1, ..., v_m)\\). This proves that \\(span(v_1, ..., v_m)\\) is a subspace of \\(V\\). <br/> Now we show that \\(span(v_1, ..., v_m)\\) contains \\(v_1, ..., v_m\\). Take arbitrary \\(k \\in \\{1, ..., m\\}\\). Form a linear combination \\(\\lambda_1v_1 + ... + \\lambda_mv_m\\) with \\(\\lambda_k = 1\\) and \\(\\lambda_j = 0\\) for \\(j \\neq k\\). Therefore, \\(\\lambda_1v_1 + ... + \\lambda_mv_m = v_k\\). Thus, each \\(v_k\\) is present within \\(span(v_1, ..., v_m)\\).<br/>Finally, we can prove that any set containing each \\(v_1, ..., v_m\\) must contain \\(span(v_1, ..., v_m)\\): assume that \\(U\\) is a subspace of \\(V\\), containing each of \\(v_1, ..., v_m\\). By the closure of \\(U\\) under addition and scalar multiplication \\(\\lambda_1 v_1 + ... + \\lambda_m v_m \\in U\\). Therefore, \\(U\\) contains \\(span(v_1, ..., v_m)\\).<br/> Thus, we have shown that any subspace containing \\(v_1, ..., v_m\\) must contain \\(span(v_1, ..., v_m)\\), and thus \\(span(v_1, ..., v_m)\\) is the smallest subspace containing \\(v_1, ..., v_m\\).",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - Span of \\(F^n\\)",
+            "frontText" : "Prove that \\((1, 0, ..., 0), (0, 1, ..., 0), ..., (0, 0, ..., 1)\\) spans \\(F^n\\).",
+            "frontImg" : "",
+            "backText" : "To show that \\(span((1, 0, ..., 0), (0, 1, ..., 0), ..., (0, 0, ..., 1)) = F^n\\), we need to show that \\(span(v_1, ..., v_m) \\subseteq F^n\\) and that \\(F^n \\subseteq span(v_1, ..., v_m)\\).<br/>\\(span(v_1, ..., v_m) \\subseteq F^n\\): take arbitrary \\(\\lambda_1 (1, 0, ..., 0) + \\lambda_2 (0, 1, ..., 0) + ... + \\lambda_m (0, 0, ..., 1) = (\\lambda_1, \\lambda_2, ..., \\lambda_m) \\in F\\), by definition of \\(F^n\\). Thus \\(span(v_1, ..., v_m) \\subseteq F^n\\). <br/> Take arbitrary \\((x_1, x_2, ..., x_n) \\in F^n\\), then \\((x_1, x_2, ..., x_n) = x_1 (1, 0, ..., 0) + x_2 (0, 1, ..., 0) + ... + x_n (0, 0, ..., 1) \\in span(v_1, ..., v_m)\\). Therefore, \\(F^n \\subseteq span(x_1, ..., x_n).<br/> By definition, \\(span(v_1, ..., v_n) = F^n\\).\\)",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Definition - Finite-Dimensional Vector Space",
+            "frontText" : "State the definition of a finite-dimensional vector space.",
+            "frontImg" : "",
+            "backText" : "A vector space is finite dimensional if some list of vectors in it spans the space. Recall that a list must have a finite length, so a vector space is finite dimensional if it is spanned by a finite number of vectors in it.",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Definition - Polynomial, \\(\\mathcal{P}(F)\\)",
+            "frontText" : "State the definition of a polynomial and give the definition of \\(\\mathcal{P}(F)\\).",
+            "frontImg" : "",
+            "backText" : "A function \\(p : F \\rightarrow F\\) is called a polynomial with coefficients in \\(F\\) if there exists \\(\\lambda_0, ..., \\lambda_m \\in F\\) such that \\(p(z) = \\lambda_0 + \\lambda_1z + \\lambda_2z^2 + ... + \\lambda_mz^m\\), for all \\(z \\in F\\). We define \\(\\mathcal{P}(F)\\) as the set of all polynomials with coefficients in \\(F\\).",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - \\(\\mathcal{P}(F)\\) Forms a Vector Space Over \\(F\\)",
+            "frontText" : "Prove that \\(\\mathcal{P}(F)\\) defines a vector space over \\(F\\).",
+            "frontImg" : "",
+            "backText" : "Closure under addition: take arbitrary \\(x = x_0 + x_1z + x_2z^2 + ... + x_nz^n\\) and \\(y = y_0 + y_1z + y_2z^2 + ... + y_mz^m\\). By commutativity and distributivity, \\(x + y = (x_0 + y_0) + (x_1 + y_1)z + (x_2 + y_2)z^2 + ... + (x_n + y_n)z^n + ... + (x_m)z^m\\). Note that we have assumed here that \\(n < m\\), but the proof for cases \\(n = m\\) and \\(n > m\\) are similar. Since \\(F\\) is closed under addition, each \\(x_k + y_k \\in F\\). Therefore \\(x + y \\in \\mathcal{P}(F)\\). <br/> Closure under scalar multiplication: take arbitrary \\(x(z) = x_0 + x_1z + x_2z^2 + ... + x_nz^n \\in \\mathcal{P}(z)\\), and arbitrary \\(\\lambda \\in F\\). \\(\\lambda x(z) = \\lambda (x_0 + x_1 z + x_2 z^2 + ... + x_n z^n) = \\lambda x_0 + \\lambda x_1 z + \\lambda x_2 z^2 + ... + \\lambda x_n z^n\\). By the closure of \\(F\\) under scalar multiplication \\(\\lambda x_k \\in F\\). Therefore, \\(\\lambda x \\in \\mathcal{P}(z)\\).<br/> Commutativity, associativity, distributivity: these follow from the commutativity, associativity and distributivity of \\(F\\). <br/> Additive identity: the function \\(0(x) = 0\\) is the additive identity of \\(\\mathcal{P}(F)\\). It can be thought of as the polynomial \\(\\lambda_0 + \\lambda_1 z + ... + \\lambda_n z^n\\) where each \\(\\lambda_i = 0\\). <br/> Multiplicative identity: the multiplicative identity \\(1 \\in F\\) is the multiplicative identity of \\(\\mathcal{P}(F)\\). This is because, for example, \\(1 \\times (\\lambda_0 + \\lambda_1z + ... + \\lambda_nz^n) = (1 \\times \\lambda_0 + 1 \\times \\lambda_1 z + ... + 1 \\times \\lambda_n z^n) = \\lambda_0 + \\lambda_1 z + ... + \\lambda_n z^n\\) <br/> Additive inverse: take arbitrary \\(\\lambda_0 + \\lambda_1 z + ... + \\lambda_n z^n\\), then, for each \\(\\lambda_k\\), we take the additive inverse, as defined by \\(F\\), \\(-\\lambda_k\\). The polynomial \\(-\\lambda_0 + -\\lambda_1 z + -\\lambda_2 z^2 + ... + -\\lambda_n z^n\\) is then the additive inverse, since \\((\\lambda_0 + -\\lambda_0) + (\\lambda_1 + -\\lambda_1)z + ... + (\\lambda_n + -\\lambda_n)z^n \\).",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Definition - Degree of a Polynomial",
+            "frontText" : "State the definition of the degree of a polynomial.",
+            "frontImg" : "",
+            "backText" : "A polynomial \\(p \\in \\mathcal{P}(F)\\) has degree \\(m\\) if there exists scalars \\(a_0, a_1, ..., a_m \\in F) with \\(a_m \\neq 0\\) such that for every \\(z \\in F), we have \\(p(z) = a_0 + a_1z + ... + a_mz^m\\). The polynomial that is identically \\(0\\) (i.e. \\(p(x) = 0\\) for all \\(x \\in F\\)) is said to have degree \\(-\\infty\\).",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Definition - \\(\\mathcal{P}_m(F)\\)",
+            "frontText" : "State what is meant by \\(\\mathcal{P}_m(F)\\).",
+            "frontImg" : "",
+            "backText" : "\\(\\mathcal{P}_m(F)\\) denotes the set of all polynomials with coefficients in \\(F\\) that have degree \\(m\\) or less.",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - \\(\\mathcal{P}_m(F)\\) is a Finite-Dimensional Vector Space",
+            "frontText" : "Prove that \\(\\mathcal{P}_m(F)\\) is a finite-dimensional vector space.",
+            "frontImg" : "",
+            "backText" : "\\(\\mathcal{P}_m{F}\\) is spanned by \\(1, z, z^2, ..., z^m\\). Since this is a list of vectors (with finite length), \\(\\mathcal{P}_m(F)\\) is a finite-dimensional vector space.",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Definition - Infinite-Dimensional Vector Space",
+            "frontText" : "State the definition of an infinite dimensional vector space.",
+            "frontImg" : "",
+            "backText" : "An infinite-dimensional vector space is a vector space that is not finite dimensional.",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - \\(\\mathcal{P}(F)\\) is Infinite-Dimensional",
+            "frontText" : "Prove that \\(\\mathcal{P}(F)\\) is infinite dimensional.",
+            "frontImg" : "",
+            "backText" : "Assume, towards a contradiction, that \\(\\mathcal{P}(F)\\) is a finite dimensional vector space. Therefore, it can be represented as the span of vectors \\(p_1, ..., p_m \\in \\mathcal{P}(F)\\). Since each of \\(p_1, ..., p_m\\) are polynomials, they each have degree \\(d_i\\). Take the maximum of these degrees, \\(d_{max}\\). Thus, every polynomial in \\(span(p_1, ..., p_m)\\) has at most degree \\(d_{max}\\). Then consider the polynomial \\(x^{d_{max} + 1} \\in \\mathcal{P}(F)\\). This is not in the span of \\(p_1, ..., p_n\\) but is in \\(\\mathcal{P}(F)\\). This gives a contradiction. Thus, \\(\\mathca{P}(F)\\) is infinite dimensional.",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Definition - Linear Independence of a List of Vectors",
+            "frontText" : "State what it means for a list of vectors \\(v_1, ..., v_m\\) to be linearly independent.",
+            "frontImg" : "",
+            "backText" : "If \\(v_1, ..., v_m\\) are linearly independent, then the only solution to \\(\\lambda_1 v_1 + ... + \\lambda_m v_m = 0\\) is the trivial solution \\(\\lanbda_1 = ... = \\lambda_m = 0\\).",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - Linear Independent and Span",
+            "frontText" : "Prove that a list of vectors \\(v_1, ..., v_m\\) is linearly independent if and only if every vector in \\(span(v_1, ..., v_m)\\) has only one representation.",
+            "frontImg" : "",
+            "backText" : "First, we will show that if a list of vectors is linearly independent, then every vector in their span has only one representation: assume that \\(v_1, ..., v_m\\) are linearly independent. Take arbitrary \\(v \\in span(v_1, ..., v_m)\\). Suppose \\(v = x_1v_1 + ... + x_mv_m = y_1v_1 + ... + y_mv_m\\). Thus, \\(0 = (x_1v_1 + ... + x_mv_m) - (y_1v_1 + ... + y_mv_m)\\). By commutativity and distributivity, we have that \\(0 = (x_1 - y_1)v_1 + ... + (x_m - y_m)v_m\\). Since \\(v_1, ..., v_m\\) are linearly independent, we know that the only solution to \\(\\lambda_1 v_m + ... + \\lambda_m v_m = 0\\) is the trivial solution \\(\\lambda_1 = ... = \\lambda_m = 0\\). Thus, each \\(x_i - y_i = 0\\) and therefore \\(x_i = y_i\\). Therefore, the two linear combinations are equal, and the representation of \\(v\\) as a linear combination is unique.<br/>Next, we show that if the representation of \\(v\\) in \\(span(v_1, ..., v_m\\) is unique, then \\(v_1, ..., v_m\\) is linearly independent: assume that \\(v = x_1v_1 + ... + x_mv_m\\) has a unique representation in \\(span(v_1, ..., v_m)\\). Assume, towards contradiction, that \\(v_1, ..., v_m\\) is not linearly independent. Then, there exists some \\(y_1v_1 + ... + y_mv_m = 0\\) with at least one \\(y_k \\neq 0\\). Thus \\(v = v + 0\\) by definition of the additive identity on a vector space. Therefore, \\(x_1v_1 + ... + x_mv_m = x_1v_1 + ... + x_mv_m + y_1v_1 + ... + y_mv_m = (x_1 + y_1)v_1 + ... + (x_m + y_m)v_m\\). Since at least one \\(y_k \\neq 0\\), this is not the same as \\(x_1v_1 + ... + x_mv_m\\) and thus \\(v\\) has at least two representations. This contradicts our original assumption, and thus \\(v_1, ..., v_m\\) is linearly independent.",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - The List \\((1, 0, ..., 0), (0, 1, ..., 0), (0, 0, ..., 1)\\) is Linearly Independent",
+            "frontText" : "Prove that the vectors \\((1, 0, ..., 0), (0, 1, ..., 0), ..., (0, 0, ..., 1)\\) are linearly independent.",
+            "frontImg" : "",
+            "backText" : "An arbitrary linear combination \\(a_1(1, 0, ..., 0) + a_2(0, 1, ..., 0) + ... + a_n(0, 0, ... 1)\\) evaluates to \\((a_1, a_2, ..., a_n)\\). \\((a_1, a_2, ..., a_n) = (0, 0, ..., 0)\\) only when \\(a_1 = a_2 = ... = a_n = 0\\). Therefore, the only linear combination equal to \\(0\\) is the one where all coefficients are \\(0\\). Thus, the vectors are linearly independent.",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - The list \\(1, z, ..., z^m\\) is Linearly Independent",
+            "frontText" : "Prove that the polynomials \\(1, z, z^2, ..., z^m\\) are linearly independent.",
+            "frontImg" : "",
+            "backText" : "",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Definition - Linearly Dependent",
+            "frontText" : "",
+            "frontImg" : "",
+            "backText" : "",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - Linear Dependence Lemma",
+            "frontText" : "",
+            "frontImg" : "",
+            "backText" : "",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - The Length of a Linearly Independent List \\(\\leq\\) Length of Spanning List",
+            "frontText" : "",
+            "frontImg" : "",
+            "backText" : "",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "Proof - Finite Dimensional Subspaces",
+            "frontText" : "",
+            "frontImg" : "",
+            "backText" : "",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "",
+            "frontText" : "",
+            "frontImg" : "",
+            "backText" : "",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "",
+            "frontText" : "",
+            "frontImg" : "",
+            "backText" : "",
+            "backImg" : ""
+        },
+
+        {
+            "title" : "",
+            "frontText" : "",
+            "frontImg" : "",
+            "backText" : "",
+            "backImg" : ""
+        }
+    ]
+}
