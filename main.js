@@ -80,7 +80,8 @@ function displayCard() {
     card.innerHTML = cardsHTML;
 
     // reset mathjax
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    //MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    MathJax.typeset();
 }
 
 // load cards
