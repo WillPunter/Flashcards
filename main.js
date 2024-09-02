@@ -80,7 +80,7 @@ function displayCard() {
     card.innerHTML = cardsHTML;
 
     // reset mathjax
-    window.setTimeOut(MathJax.typeset, 1000);
+    window.setTimeout(MathJax.typeset, 1000);
 }
 
 // load cards
